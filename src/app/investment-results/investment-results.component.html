@@ -1,0 +1,27 @@
+@if (!annualData) {
+  <h2>Please fill out the input form!</h2>
+} @else {
+
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>investment Value</th>
+        <th>interest (Year)</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of annualData; track item.year) {
+        <tr>
+          <td>{{ item.year }}</td>
+          <td> {{ item.valueEndOfYear | currency:'EUR' }}</td>
+          <td>{{ item.interest | currency:'EUR' }}</td>
+          <td>{{ item.totalInterest | currency:'EUR' }}</td>
+          <td>{{ item.totalAmountInvested | currency:'EUR' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

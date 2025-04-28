@@ -13,9 +13,4 @@ import { CalculatorService } from './calculator.service';
 })
 export class AppComponent {
 
-  calculator = inject(CalculatorService);
-  annualData =  signal<AnnualData[] | undefined>(undefined);
-  onShow(investmentObj: Investment) {
-    this.annualData.update(() => this.calculator.calculateInvestmentResults(investmentObj));
-  }
 }

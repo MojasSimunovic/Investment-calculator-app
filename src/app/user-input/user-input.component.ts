@@ -29,11 +29,5 @@ export class UserInputComponent {
       duration: +this.duration()
     }
     this.calculatorService.calculateInvestmentResults(this.investment);
-    this.investment = {
-      initialInvestment: 0,
-      annualInvestment: 0,
-      expectedReturn: 0,
-      duration: 0
-    }
   }
 }

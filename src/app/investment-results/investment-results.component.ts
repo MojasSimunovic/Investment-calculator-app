@@ -13,7 +13,5 @@ import { CalculatorService } from '../calculator.service';
 export class InvestmentResultsComponent {
   calculatorService = inject(CalculatorService);
 
-  results = computed(()=> {
-    return this.calculatorService.annualData();
-  })
+  results =  this.calculatorService.annualData.asReadonly();
 }
